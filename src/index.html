@@ -4,10 +4,367 @@
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <title>MP1</title>
     </head>
     <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
+        <header>
+            <div class="header_container">
+                <a href="#logo" class="logo_link"><h2>Wildlife Photography</h2></a>
+
+                <nav>
+                    <ul class="nav_list">
+                        <li><a href="#portfolio" class="portfolio_navbar"><h2>Portfolio</h2></a></li>
+                        <li><a href="#about" class="about_navbar"><h2>About</h2></a></li>
+                        <li><a href="#contact" class="contact_navbar"><h2>Contact</h2></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Logo -->
+        <section class="logo_section">
+            <img src="assets/title.jpg.avif" alt="Polar Bear walking on ice" class="logo_img">
+            <h1 class="logo_title">
+                Wildlife Photography
+            </h1>
+            <h4 class="logo_text">
+                Mind-Blowing photography on natural habitat.
+            </h4>
+        </section>
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="portfolio_section">
+            <h2 class="portfolio_title">
+                Portfolio
+            </h2>
+
+            <!-- Row 1 -->
+            <div class="portfolio_row">
+                <!-- Image 1 -->
+                <div class="portfolio_item" data-modal-target="modal-1">
+                    <img src="assets/animal9.jpg" class="modal_trigger" alt="Portfolio Image 1">
+                    <div class="portfolio_overlay">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="portfolio_item"  data-modal-target="modal-2">
+                    <img src="assets/animal1.jpg" class="modal_trigger" alt="Portfolio Image 2">
+                    <div class="portfolio_overlay">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                <!-- Image 3 -->
+                <div class="portfolio_item"  data-modal-target="modal-3">
+                    <img src="assets/animal2.jpg" class="modal_trigger" alt="Portfolio Image 3">
+                    <div class="portfolio_overlay">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="portfolio_row">
+                <!-- Image 1 -->
+                <div class="portfolio_item"  data-modal-target="modal-4">
+                    <img src="assets/animal3.jpg.avif" class="modal_trigger" alt="Portfolio Image 4">
+                    <div class="portfolio_overlay">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="portfolio_item"  data-modal-target="modal-5">
+                    <img src="assets/animal5.jpg.avif" class="modal_trigger" alt="Portfolio Image 5">
+                    <div class="portfolio_overlay">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                <!-- Image 3 -->
+                <div class="portfolio_item"  data-modal-target="modal-6">
+                    <img src="assets/animal4.jpg" class="modal_trigger" alt="Portfolio Image 6">
+                    <div class="portfolio_overlay">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- About -->
+        <section id="about">
+            <h2 class="about_title">
+                About
+            </h2>
+
+            <p class="about_text">
+                Wildlife photography is spending almost the entirety of your time in the field, chasing serenity and fun. Getting a chance to capture images on some of the most beautiful creatures on this planet is a desire that many wish to experience.
+            </p>
+        </section>
+
+        <!-- Multi-Layout -->
+        <section class="features_section">
+            <h2 class="features_title">
+                Features
+            </h2>
+            
+            <div class="feature_row">
+                <!-- Image 1 -->
+                <div class="feature_item">
+                    <img src="assets/animal6.jpg" alt="">
+                    <h4 class="feature_minititle">
+                        Cheetah
+                    </h4>
+                    <p class="feature_text">
+                        World's fastest land animal, reaching speeds up to 70 mph.
+                    </p>
+                </div>
+                <!-- Image 2 -->
+                <div class="feature_item">
+                    <img src="assets/animal7.jpg" alt="">
+                    <h4 class="feature_minititle">
+                        Lion
+                    </h4>
+                    <p class="feature_text">
+                        King of the jungle who rules through silent strength.
+                    </p>
+                </div>
+                <!-- Image 3 -->
+                <div class="feature_item">
+                    <img src="assets/animal8.webp" alt="">
+                    <h4 class="feature_minititle">
+                        Hippopotamus
+                    </h4>
+                    <p class="feature_text">
+                        Massive, semi-aquatic African mammal that runs faster than a human.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carousel -->
+        <section class="carousel_section">
+            <h2 class="carousel_title">
+                Fun Facts
+            </h2>
+
+            <div class="carousel_wrapper">
+                <!-- Previous Button(have <- arrow) -->
+                <button class="carousel_prev">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="carousel_track">
+                    <div class="carousel_slide slide_1">
+                        <p>
+                            A lion's roar is so lound that it can be heard up to 5 miles away. Lions always love to sleep - they sleep about 20 hours a day, which helps conserve their energy for hunting.
+                        </p>    
+                    </div>
+    
+                    <div class="carousel_slide slide_2">
+                        <p>
+                            Zebras have a unique black-and-white stripe patterns that act just like human fingerprints. Zebras have the ability to sleep while standing up due to a locking mechanism in their leg joints.
+                        </p>    
+                    </div>
+    
+                    <div class="carousel_slide slide_3">
+                        <p>
+                            Elephants are the largest living land mammals on Earth. Elephants can hear thorugh their feet by picking up low-frequency vibrations traveling through the ground.
+                        </p>    
+                    </div>
+                </div>
+
+                <!-- Next Button(have -> arrow) -->
+                <button class="carousel_next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Video -->
+        <section class="video_section">
+            <h2 class="video_title">
+                Video
+            </h2>
+
+            <video controls>
+                <source src="assets/video.mp4" type="video/mp4">
+                Your browser doesn't support the video tag.
+            </video>
+        </section>
+
+        <!-- Contact Me -->
+        <section id="contact">
+            <h2 class="contact_title">
+                Contact Me
+            </h2>
+
+            <!-- Name -->
+            <div class="contact_group">
+                <label for="name">
+                    Name
+                </label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <!-- Email -->
+            <div class="contact_group">
+                <label for="email">
+                    Email
+                </label>
+                <input type="text" id="email" name="email">
+            </div>
+
+            <!-- Phone Number -->
+            <div class="contact_group">
+                <label for="phone">
+                    Phone Number
+                </label>
+                <input type="text" id="phone" name="phone">
+            </div>
+
+            <!-- Message -->
+            <div class="contact_group">
+                <label for="linkedin">
+                    LinkedIn Account Name
+                </label>
+                <input type="text" id="linkedin" name="linkedin">
+            </div>
+        </section>
+
+        <footer>
+            <!-- Location -->
+            <div class="footer_col">
+                <h3 class="footer_heading">
+                    Location
+                </h3>
+
+                <p class="footer_text">
+                    Available world-wide. Currently based in Tanzania.
+                </p>
+            </div>
+            
+            <!-- About The Web -->
+            <div class="footer_col">
+                <h3 class="footer_heading">
+                    About The Web
+                </h3>
+                
+                <div class="social_icons">
+                    <!-- GitHub Icon -->
+                    <a href="https://github.com" class="footer_link" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com" class="footer_link" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+
+                    <!-- YouTube -->
+                    <a href="https://www.youtube.com" class="footer_link" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                    <!-- Twitter -->
+                    <a href="https://twitter.com" class="footer_link" aria-label="Twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer_col">
+                <h3 class="footer_heading">
+                    About Wildlife Photography
+                </h3>
+
+                <a href="https://www.worldwildlife.org" class="footer_text">
+                    World Wildlife
+                </a>
+
+                <a href="https://wildlife.org" class="footer_text">
+                    The Wildlife Society
+                </a>
+            </div>
+        </footer>
+
+        <!-- Modal Image 1 -->
+        <div class="modal_overlay" id="modal-1">
+            <div class="modal_content">
+                <button class="modal_close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h3 class="modal_title">
+                    Wildebeest
+                </h3>
+                <img src="assets/animal9.jpg" class="modal_image" alt="Modal Image 1">
+            </div>
+        </div>
+
+        <!-- Modal Image 2 -->
+        <div class="modal_overlay" id="modal-2">
+            <div class="modal_content">
+                <button class="modal_close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h3 class="modal_title">
+                    Leoopard
+                </h3>
+                <img src="assets/animal1.jpg" class="modal_image" alt="Modal Image 2">
+            </div>
+        </div>
+
+        <!-- Modal Image 3 -->
+        <div class="modal_overlay" id="modal-3">
+            <div class="modal_content">
+                <button class="modal_close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h3 class="modal_title">
+                    Tiger
+                </h3>
+                <img src="assets/animal2.jpg" class="modal_image" alt="Modal Image 3">
+            </div>
+        </div>
+
+        <!-- Modal Image 4 -->
+        <div class="modal_overlay" id="modal-4">
+            <div class="modal_content">
+                <button class="modal_close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h3 class="modal_title">
+                    Brown Bear
+                </h3>
+                <img src="assets/animal3.jpg.avif" class="modal_image" alt="Modal Image 4">
+            </div>
+        </div>
+
+        <!-- Modal Image 5 -->
+        <div class="modal_overlay" id="modal-5">
+            <div class="modal_content">
+                <button class="modal_close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h3 class="modal_title">
+                    Elephant
+                </h3>
+                <img src="assets/animal5.jpg.avif" class="modal_image" alt="Modal Image 5">
+            </div>
+        </div>
+
+        <!-- Modal Image 6 -->
+        <div class="modal_overlay" id="modal-6">
+            <div class="modal_content">
+                <button class="modal_close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h3 class="modal_title">
+                    Zebra
+                </h3>
+                <img src="assets/animal4.jpg" class="modal_image" alt="Modal Image 6">
+            </div>
+        </div>
     </body>
 </html>

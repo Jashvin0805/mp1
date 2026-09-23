@@ -1,1 +1,651 @@
 /* Your SCSS here. */
+
+// Colors
+$color_primary: teal;
+$color_secondary: darkslategray;
+$color_bg_light : white;
+$color_bg_dark : whitesmoke;
+$color_txt_light : white;
+$color_txt_dark : #333333;
+
+// Spacing
+$spacing_xs : 8px;
+$spacing_sm : 16px;
+$spacing_md : 24px;
+$spacing_lg : 32px;
+$spacing_xl : 40px;
+$spacing_xxl : 150px;
+
+// Typography
+$font_main : 'Helvetica Neue', Arial, sans-serif;
+$font_size_base : 16px;
+$font_size_icon : 30px;
+$font_size_lg : 24px;
+$font_size_xl : 40px;
+
+// Mixins
+@mixin flex-center($direction: row) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+// HTML
+html {
+    scroll-behavior: smooth;
+}
+
+// Header
+header {
+    position: sticky;
+    top: 0;
+    background-color: $color_secondary;
+    z-index: 100;
+}
+
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing_sm $spacing_lg;
+    height: 90px;
+    transition: height 0.3s ease, padding 0.3s ease;
+
+    &.is-shrunken {
+        height: 65px;
+        padding: $spacing_xs $spacing_lg;
+    }
+}
+
+.logo_link {
+    color: $color_txt_light;
+    text-decoration: none;
+    font-family: $font_main;
+}
+
+.nav_list {
+    display: flex;
+    list-style: none;
+    gap: $spacing_md;
+}
+
+.nav_list a {
+    display: inline-block;
+    color: $color_txt_light;
+    text-decoration: none;
+    font-family: $font_main;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 4px;
+
+    h2 {
+        margin: 0;
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    &:hover {
+        color: $color_primary;
+    }
+}
+
+.nav_list a.activate_link {
+    color: $color_primary;
+    font-weight: bold;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+}
+
+.logo_link h2,
+.nav_list h2 {
+    font-size: 24px;
+    margin: 0;
+    transition: font-size 0.3s ease;
+}
+
+.header_container.is-shrunken .logo_link h2,
+.header_container.is-shrunken .nav_list h2 {
+    font-size: 18px;
+}
+
+// Section
+section {
+    scroll-margin-top: 80px;
+}
+
+// Logo
+.logo_section {
+    @include flex-center(column);
+    background-color: $color_bg_light;
+    padding: $spacing_xl 0;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in;
+}
+
+.logo_img {
+    height: auto;
+    width: 100%;
+    max-width: 850px;
+}
+
+.logo_title {
+    font-family: $font_main;
+    font-size: $font_size_xl;
+    color: $color_txt_dark;
+    margin-top: $spacing_md;
+}
+
+.logo_text {
+    font-family: $font_main;
+    font-size: $font_size_base;
+    color: $color_txt_dark;
+    margin-top: $spacing_xs;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+// Portfolio
+#portfolio {
+    @include flex-center(column);
+    background-color: $color_bg_light;
+    padding: $spacing_xl $spacing_lg;
+    text-align: center;
+}
+
+#portfolio .portfolio_title {
+    font-family: $font_main;
+    font-size: $font_size_xl;
+    color: $color_txt_dark;
+    margin-bottom: $spacing_lg;
+}
+
+.portfolio_row {
+    display: flex;
+    justify-content: center;
+    gap: $spacing_md;
+    margin-bottom: $spacing_md;
+}
+
+.portfolio_item {
+    position: relative;
+    cursor: pointer;
+
+    img {
+        height: 170px;
+        width: 170px;
+        object-fit: cover;
+    }
+}
+
+.portfolio_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: 0.5);
+    color: $color_txt_light;
+    font-size: $font_size_lg;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    @include flex-center();
+
+    .portfolio_item:hover & {
+        opacity: 1;
+    }
+}
+
+// About
+#about {
+    @include flex-center(column);
+    background-image: url("../assets/about-image.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: $spacing_xl $spacing_lg;
+    text-align: center;
+    min-height: 600px;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 0;
+    }
+}
+
+.about_title {
+    font-family: $font_main;
+    font-size: $font_size_xl;
+    color: $color_bg_light;
+    margin-bottom: $spacing_lg;
+    position: relative;
+    z-index: 1;
+}
+
+.about_text {
+    font-family: $font_main;
+    font-size: $font_size_base;
+    color: $color_txt_light;
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+// Features
+.features_section {
+    @include flex-center(column);
+    background-color: $color_bg_light;
+    padding: $spacing_xl $spacing_lg;
+    text-align: center;
+}
+
+.features_section .features_title {
+    font-family: $font_main;
+    font-size: $font_size_xl;
+    color: $color_txt_dark;
+    margin-bottom: $spacing_xl;
+}
+
+.feature_row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: $spacing_lg;
+    margin-bottom: $spacing_md;
+}
+
+.feature_item {
+    flex: 0 0 220px;
+    overflow: hidden;
+
+    img {
+        height: 150px;
+        width: 150px;
+        object-fit: cover;
+    }
+}
+
+.feature_minititle {
+    font-family: $font_main;
+    font-size: $font_size_xl;
+    color: $color_txt_dark;
+    margin-bottom: $spacing_xl;
+}
+
+.feature_text {
+    font-family: $font_main;
+    font-size: $font_size_base;
+    color: $color_txt_dark;
+    position: relative;
+    z-index: 1;
+    word-wrap: break-word;
+}
+
+// Carousel
+.carousel_section {
+    @include flex-center(column);
+    background-color: $color_bg_light;
+    padding: $spacing_xl $spacing_lg;
+    text-align: center;
+}
+
+.carousel_section .carousel_title {
+    font-family: $font_main;
+    font-size: $font_size_xl;
+    color: $color_txt_dark;
+    margin-bottom: $spacing_xl;
+}
+
+.carousel_wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.carousel_track {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.carousel_slide {
+    flex: 0 0 100%;
+    min-height: 280px;
+    @include flex-center();
+    padding: $spacing_xl $spacing_xxl;
+    box-sizing: border-box;
+    
+    p {
+        font-family: $font_main;
+        font-size: $font_size_base;
+        color: $color_txt_light;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+        word-wrap: break-word;
+        line-height: 1.5;
+        margin: 0;
+    }
+}
+
+.slide_1 {
+    background-color: $color_primary;
+}
+
+.slide_2 {
+    background-color: $color_secondary;
+}
+
+.slide_3 {
+    background-color: coral;
+}
+
+.carousel_prev,
+.carousel_next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 10;
+
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: $color_bg_dark;
+
+    &:hover {
+        background-color: lighten($color_bg_dark, 10%);
+    }
+
+    &:active {
+        background-color: darken($color_bg_dark, 10%);
+    }
+}
+
+.carousel_prev {
+    left: 8px;
+}
+
+.carousel_next {
+    right: 8px;
+}
+
+// Modal
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: 0.6);
+    z-index: 200;
+    @include flex-center(row);
+    display: none;
+
+    &.is-open {
+        display: flex;
+    }
+}
+
+.modal_content {
+    background: $color_bg_light;
+    padding: $spacing_lg;
+    border-radius: 8px;
+    position: relative;
+    max-width: 600px;
+    max-height: 600px;
+    text-align: center;
+}
+
+.modal_close {
+    position: absolute;
+    top: $spacing_sm;
+    right: $spacing_sm;
+    font-size: $font_size_lg;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $color_txt_dark;
+}
+
+.modal_image {
+    width: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    margin-top: $spacing_md;
+}
+
+// Video
+.video_section {
+    @include flex-center(column);
+    background-color: $color_bg_light;
+    padding: $spacing_xl $spacing_lg;
+    text-align: center;
+
+    video {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+    }
+
+    .video_title {
+        font-family: $font_main;
+        font-size: $font_size_xl;
+        color: $color_txt_dark;
+        margin-bottom: $spacing_xl;
+    }
+}
+
+// Contact
+#contact {
+    @include flex-center(column);
+    background-color: $color_bg_light;
+    padding: $spacing_xl $spacing_lg;
+    text-align: center;
+}
+
+.contact_title {
+    font-family: $font_main;
+    font-size: $font_size_xl;
+    color: $color_txt_dark;
+    margin-bottom: $spacing_lg;
+    position: relative;
+}
+
+.contact_group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: $spacing_md;
+    text-align: left;
+
+    label {
+        font-family: $font_main;
+        font-size: $font_size_base;
+        color: $color_txt_dark;
+        margin-bottom: $spacing_xs;
+    }
+
+    input {
+        font-family: $font_main;
+        font-size: $font_size_base;
+        padding: $spacing_xs;
+        border: 1px solid $color_secondary;
+        border-radius: 4px;
+    }
+}
+
+// Footer
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: $spacing_xl $spacing_lg;
+    text-align: center;
+    background-color: $color_secondary;
+}
+
+.footer_col {
+    flex: 1;
+}
+
+.footer_heading {
+    font-family: $font_main;
+    font-size: $font_size_lg;
+    color: $color_bg_dark;
+    position: relative;
+    margin-bottom: $spacing_md;
+}
+
+.footer_text {
+    font-family: $font_main;
+    font-size: $font_size_base;
+    color: $color_bg_dark;
+    position: relative;
+    display: block;
+    margin-bottom: $spacing_xs;
+}
+
+.social_icons {
+    display: flex;
+    justify-content: center;
+    gap: $spacing_sm;
+    margin-top: $spacing_sm;
+}
+
+.footer_link {
+    color: $color_txt_light;
+    font-size: $font_size_icon;
+    transition: color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+        color: $color_primary;
+        transform: scale(1.15);
+    }
+}
+
+// Responsiveness
+@media (max-width: 1366px) {
+    .feature_row {
+        gap: $spacing_lg;
+    }
+}
+
+@media (max-width: 768px) {
+    .header_container {
+        height: auto;
+        padding: $spacing_sm;
+    }
+
+    .nav_list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: $spacing_sm;
+    }
+
+    .feature_row {
+        flex-wrap: wrap;
+        gap: $spacing_lg;
+    }
+
+    .feature_item {
+        flex: 0 0 100%;
+        max-width: 280px;
+    }
+
+    .logo_title,
+    .about_title,
+    .features_title,
+    .carousel_title,
+    .video_title,
+    .contact_title {
+        font-size: 32px;
+    }
+
+    .about_text {
+        max-width: 90%;
+    }
+
+    .carousel_section {
+        .carousel_slide {
+            padding: $spacing_lg $spacing_md;
+            font-size: 14px;
+        }
+
+        .carousel_prev {
+            left: 8px;
+        }
+
+        .carousel_next {
+            right: 8px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .header_container {
+        flex-direction: column;
+    }
+
+    .header_container.is-shrunken {
+        height: auto;
+        padding: $spacing_xs $spacing_sm;
+    }
+
+    .logo_title,
+    .about_title,
+    .features_title,
+    .carousel_title,
+    .video_title,
+    .contact_title {
+        font-size: 28px;
+    }
+
+    .about_text,
+    .feature_text,
+    .contact_text {
+        font-size: 14px;
+    }
+
+    .feature_item img {
+        height: 120px;
+        width: 120px;
+    }
+
+    .carousel_section {
+        .carousel_slide {
+            padding: $spacing_md $spacing_lg;
+            font-size: 14px;
+        }
+
+        .carousel_slide p {
+            font-size: 14px;
+        }
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        gap: $spacing_lg;
+    }
+}
